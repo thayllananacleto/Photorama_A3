@@ -18,8 +18,21 @@ enum Method: String {
 
 struct FlickrAPI {
     
-    private static let baseURLString = "http://api.flickr.com/services/rest"
-    private static let apiKey = "da6ba73b405e840a7eb6f5d1ffc3791f"
+//    private static let baseURLString = "http://api.flickr.com/services/rest"
+//    private static let apiKey = "da6ba73b405e840a7eb6f5d1ffc3791f"
+//
+//    private static let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        return formatter
+//    }()
+//
+//    static var interestingPhotosURL: URL {
+//        return flickrURL(method: .interestingPhotos, parameters: ["extras": "url_h,date_taken"])
+//    }
+    
+    private static let baseURLString = "https://api.flickr.com/services/rest"
+    private static let apiKey = "a6d819499131071f158fd740860a5a88"
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,7 +41,8 @@ struct FlickrAPI {
     }()
     
     static var interestingPhotosURL: URL {
-        return flickrURL(method: .interestingPhotos, parameters: ["extras": "url_h,date_taken"])
+        return flickrURL(method: .interestingPhotos,
+                         parameters: ["extras": "url_h,date_taken"])
     }
     
     private static func flickrURL(method: Method, parameters: [String:String]?) -> URL {
